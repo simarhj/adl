@@ -12,16 +12,57 @@
   </div>
 
   <div class="col-md-12 col-lg-6">
-    <nb-list>
-      <nb-list-item *ngFor="let producto of productos_lista">
-        <ngx-producto *ngIf="producto.accountInformation.bank=='BANCO_1' || otros" [producto]="producto"></ngx-producto>
-      </nb-list-item>
-    </nb-list>
+    <nb-card size="small">
+        <nb-card-header><b>Cuenta de Ahorro ({{cah.length}})</b></nb-card-header>
+      <nb-list>
+        <nb-list-item *ngFor="let cuentaAh of cah">
+          <ngx-cuentaah *ngIf="cuentaAh.accountInformation.bank=='BANCO_1' || otros" [producto]="cuentaAh"></ngx-cuentaah>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
   </div>
 
-  <div class="col-12">
+  <div class="col-md-12 col-lg-6">
     <nb-card size="small">
-      
+        <nb-card-header><b>Cuenta Corriente ({{cah.length}})</b></nb-card-header>
+      <nb-list>
+        <nb-list-item *ngFor="let cuentaCo of cco">
+          <ngx-cuentaco *ngIf="cuentaCo.accountInformation.bank=='BANCO_1' || otros" [producto]="cuentaCo"></ngx-cuentaco>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6">
+    <nb-card size="small">
+        <nb-card-header><b>CDT ({{cdts.length}})</b></nb-card-header>
+      <nb-list>
+        <nb-list-item *ngFor="let cdt of cdts">
+          <ngx-certdt *ngIf="cdt.accountInformation.bank=='BANCO_1' || otros" [producto]="cdt"></ngx-certdt>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6">
+    <nb-card size="small">
+        <nb-card-header><b>Tarjeta de Credito ({{tcr.length}})</b></nb-card-header>
+      <nb-list>
+        <nb-list-item *ngFor="let tarj of tcr">
+          <ngx-tarjeta *ngIf="tarj.accountInformation.bank=='BANCO_1' || otros" [producto]="tarj"></ngx-tarjeta>
+        </nb-list-item>
+      </nb-list>
+    </nb-card>
+  </div>
+
+  <div class="col-md-12 col-lg-6">
+    <nb-card size="small">
+        <nb-card-header><b>Credito ({{cre.length}})</b></nb-card-header>
+      <nb-list>
+        <nb-list-item *ngFor="let cred of cre">
+          <ngx-credito *ngIf="cred.accountInformation.bank=='BANCO_1' || otros" [producto]="cred"></ngx-credito>
+        </nb-list-item>
+      </nb-list>
     </nb-card>
   </div>
 </div>
